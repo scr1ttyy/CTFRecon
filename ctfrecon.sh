@@ -12,7 +12,7 @@ cd $IP/
 mkdir loot scans ss exploit
 clear
 echo "Successfully created $DIR_NAME directory!"
-echo "$IP ${DIR_NAME}.htb" >> /etc/hosts
+echo "$IP ${DIR_NAME}.${PLATFORM}" >> /etc/hosts
 echo "Successfully added ${DIR_NAME}.${PLATFORM} to /etc/hosts"
 
 # Run scanning scripts
