@@ -1,8 +1,9 @@
 # CTFRecon 
 Basic bash script to automate CTF(e.g.,hackthebox,tryhackme) initialization.
 
+*ctfrecon writes to /etc/hosts so it is recommended to run it as root.*
+
 ```bash
-*ctfrecon writes to /etc/hosts file and runs nmap so it is recommended to run it as root*
 Usage: sudo ./ctfrecon.sh [IP] [Directory Name] [Platform (e.g., hackthebox,thm)]
 ```
 
