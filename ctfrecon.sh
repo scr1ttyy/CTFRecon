@@ -36,16 +36,14 @@ else
 	mkdir loot scans ss exploit
 	clear
 	echo "[+] Successfully created $DIR_NAME directory!"
-	echo "[i] Adding ${DIR_NAME}.${PLATFORM} to /etc/hosts!\n"
+	echo "[i] Adding ${DIR_NAME}.${PLATFORM} to /etc/hosts!"
+	
+	#Sudo check
 	if (($(whoami) == "root"))
 	then
 		echo "$IP ${DIR_NAME}.${PLATFORM}" >> /etc/hosts >/dev/null
 		echo "[+] Successfully added ${DIR_NAME}.${PLATFORM} to /etc/hosts"
-	else
-		echo "[-] Error: Please run ctfrecon as root!"
-		echo "[i] Exiting..."
-		pkill -KILL ctfrecon.sh
-
+		
 		# Scanning using nmap
 		echo "[+] Now Scanning network using nmap..\n."
 		nmap -T4 -A -p- -oN scans/${DIR_NAME}_nmap_scan.txt $IP >/dev/null
@@ -55,7 +53,7 @@ else
 		wait
 
 		# Directory busting using GoBuster
-		echo "[i] Initializing GoBuster for directory bruteforcing...\n"
+		echo "[i] Initializing GoBuster for directory bruteforcing..."
 		gobuster dir -u http://${DIR_NAME}.${PLATFORM} -w $WORDLIST -t 64 -o scans/${DIR_NAME}_GoBuster_scan.txt &>/dev/null
 		wait
 		echo "[+] Log files saved at scans directory!"
@@ -65,5 +63,12 @@ else
 		cd ../../
 		chmod 755 $(pwd)/$DIR_NAME/
 		chown -R 1000:1000 $(pwd)/$DIR_NAME/
+
+	else
+		echo "[-] Error: Please run ctfrecon as root!"
+		echo "[i] Exiting..."
+		pkill -KILL $(echo $$)
+
+
 	fi
 fi
