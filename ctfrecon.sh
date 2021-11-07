@@ -45,7 +45,7 @@ else
 		echo "[+] Successfully added ${DIR_NAME}.${PLATFORM} to /etc/hosts"
 		
 		# Scanning using nmap
-		echo "[+] Now Scanning network using nmap..\n."
+		echo "[+] Now Scanning network using nmap.."
 		nmap -T4 -A -p- -oN scans/${DIR_NAME}_nmap_scan.txt $IP >/dev/null
 
 		echo "[+] Nmap scan: Finished"
@@ -57,7 +57,7 @@ else
 		gobuster dir -u http://${DIR_NAME}.${PLATFORM} -w $WORDLIST -t 64 -o scans/${DIR_NAME}_GoBuster_scan.txt &>/dev/null
 		wait
 		echo "[+] Log files saved at scans directory!"
-		echo "[+] GoBuster Directory Bruteforcing: Finished\n"
+		echo "[+] GoBuster Directory Bruteforcing: Finished"
 
 		# Cleaning permissions of directories
 		cd ../../
