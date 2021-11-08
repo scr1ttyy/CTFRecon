@@ -36,11 +36,11 @@ else
 	mkdir loot scans ss exploit
 	clear
 	echo "[+] Successfully created $DIR_NAME directory!"
-	echo "[i] Adding ${DIR_NAME}.${PLATFORM} to /etc/hosts!"
 	
 	#Sudo check
 	if (($(whoami) == "root"))
 	then
+		echo "[i] Adding ${DIR_NAME}.${PLATFORM} to /etc/hosts.."
 		echo "$IP ${DIR_NAME}.${PLATFORM}" >> /etc/hosts >/dev/null
 		echo "[+] Successfully added ${DIR_NAME}.${PLATFORM} to /etc/hosts"
 		
