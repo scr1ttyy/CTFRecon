@@ -12,7 +12,7 @@ RE='\.txt$'
 # Check if user inputted necessary parameters (IP, Directory name, Platform)
 if [ "$1" == "-h" ]
 then
-	echo "[i] Usage: ./ctfrecon.sh [IP] [Directory Name] [Platform]"	
+	echo "[i] Usage: ./ctfrecon.sh [IP] [Directory Name] [Platform] [Preferred Wordlist for Directory Busting]"	
 	echo "[i] ctfrecon is recommended to be run as root!"
 elif (( $# != 4 ))
 then
