@@ -20,4 +20,4 @@ Socials:
 Donation box:
 
 - [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/hambyhaxx)
-- [BuyMeACoffee](https://www.buymeacoffee.com/hambyhaxx)
+- [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/hambyhaxx)
