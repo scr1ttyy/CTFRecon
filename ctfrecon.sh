@@ -38,10 +38,10 @@ else
 	echo "[+] Successfully created $DIR_NAME directory!"
 	
 	#Sudo check
-	if (($(whoami) == "root"))
+	if (($UID == 0))
 	then
 		echo "[i] Adding ${DIR_NAME}.${PLATFORM} to /etc/hosts.."
-		echo "$IP ${DIR_NAME}.${PLATFORM}" >> /etc/hosts >/dev/null
+		echo "$IP ${DIR_NAME}.${PLATFORM}" >> /etc/hosts 
 		echo "[+] Successfully added ${DIR_NAME}.${PLATFORM} to /etc/hosts"
 		
 		# Scanning using nmap
