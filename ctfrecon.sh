@@ -18,7 +18,7 @@ elif (( $# != 4 ))
 then
 	echo "[-] Error: Number of arguments passed: $#"
 	echo "[i] Number of parameters required: 4"
-	echo "[i] Usage: ./ctfrecon.sh [IP] [Directory Name] [Platform]"
+	echo "[i] Usage: ./ctfrecon.sh [IP] [Directory Name] [Platform] [Wordlist]"
 
 elif ! [[ "$4" =~  $RE ]]
 then
