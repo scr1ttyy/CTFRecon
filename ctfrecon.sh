@@ -46,7 +46,7 @@ else
 		
 		# Scanning using nmap
 		echo "[+] Now Scanning network using nmap.."
-		nmap -T4 -A -p- -oN scans/${DIR_NAME}_nmap_scan.txt $IP >/dev/null
+		nmap -T4 -A -Pn -p- -oN scans/${DIR_NAME}_nmap_scan.txt $IP >/dev/null
 
 		echo "[+] Nmap scan: Finished"
 		echo "[+] Log files saved at scans/ directory!\n"
