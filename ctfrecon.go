@@ -24,13 +24,14 @@ func main() {
 	nmap_loc, err := exec.LookPath("nmap")
 	gobuster_loc, err := exec.LookPath("gobuster")
 
-	// nmap struct
+	// nmap Struct
 	nmapCmd := &exec.Cmd{
 		Path:   nmap_loc,
 		Args:   []string{nmap_loc, "-T4", "-sC", "-sV", "-oN", *dir + "/" + *ip + "/" + "scans" + "/" + *dir + "-" + "nmap_scan.txt", "-p-", *ip},
 		Stdout: os.Stdout,
 		Stderr: os.Stderr,
 	}
+	// GoBuster Struct
 	gobusterCmd := &exec.Cmd{
 		Path:   gobuster_loc,
 		Args:   []string{gobuster_loc, "dir", "-u", "http://" + *ip, "-w", *wordlist},
