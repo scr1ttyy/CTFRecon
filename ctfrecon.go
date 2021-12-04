@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"os/user"
 	"regexp"
 )
 
@@ -23,6 +24,7 @@ func main() {
 	hosts_file, err := os.OpenFile("/etc/hosts", os.O_APPEND|os.O_WRONLY, 644)
 	nmap_loc, err := exec.LookPath("nmap")
 	gobuster_loc, err := exec.LookPath("gobuster")
+	user, err := user.Current()
 
 	// nmap Struct
 	nmapCmd := &exec.Cmd{
@@ -39,10 +41,9 @@ func main() {
 		Stderr: os.Stderr,
 	}
 
-	// Command Line Arguments check
-	if len(os.Args) != 5 || regex_text == false {
-		fmt.Println("[-] Check the number of arguments passed and wordlist should be in .txt!")
-		fmt.Println(err)
+	// Command Line Arguments check and user status
+	if len(os.Args) != 5 || regex_text == false || user.Username != "0" {
+		fmt.Println("[-] CTFRecon must be run as root! Check the number of arguments passed and wordlist should be in .txt!")
 		flag.PrintDefaults()
 		os.Exit(1)
 	} else {
