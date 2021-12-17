@@ -15,7 +15,7 @@ func main() {
 	ip := flag.String("u", "", "IP Address (Required)")
 	dir := flag.String("d", "", "Name of directory to be created. (Required)")
 	platform := flag.String("p", "", "Platform (e.g., TryHackMe or HTB to .thm, .htb respectively) (Required)")
-	wordlist := flag.String("w", "test.txt", "Wordlist to use for Directory Busting. (Required)")
+	wordlist := flag.String("w", "/usr/share/seclists-git/Discovery/Web-Content/directory-list-2.3-medium.txtf", "Wordlist to use for Directory Busting. (Required)")
 	flag.Parse()
 
 	// Checking for necessary components to run ctfrecon
