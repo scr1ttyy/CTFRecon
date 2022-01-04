@@ -1,7 +1,9 @@
-# CTFRecon 
+# CTFRecon
+
 Basic bash script to automate CTF(e.g.,hackthebox,tryhackme) initialization.
 
 Tools used in script:
+
 1. [nmap](https://nmap.org/)
 2. [GoBuster](https://github.com/OJ/gobuster)
 
@@ -11,7 +13,7 @@ Tools used in script:
 Usage: sudo ./ctfrecon.sh [IP] [DIRECTORY NAME] [PLATFORM (e.g., hackthebox,thm)] [WORDLIST]
 ```
 
-Todo: 
+Todo:
 
 - [ ] Fix ugly code.
 - [ ] Make input interchangeable.
