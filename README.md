@@ -2,7 +2,7 @@
 
 Basic bash script to automate CTF(e.g.,hackthebox,tryhackme) initialization.
 
-Tools used in script:
+## Tools used in script:
 
 1. [nmap](https://nmap.org/)
 2. [GoBuster](https://github.com/OJ/gobuster)
@@ -13,7 +13,7 @@ Tools used in script:
 Usage: sudo ./ctfrecon.sh [IP] [DIRECTORY NAME] [PLATFORM (e.g., hackthebox,thm)] [WORDLIST]
 ```
 
-Todo:
+### Todo
 
 - [ ] Fix ugly code.
 - [ ] Make input interchangeable.
@@ -21,11 +21,18 @@ Todo:
 
 *Feedbacks and suggestions are welcome!*
 
-Socials:
+### Socials
 
 - [Twitter](https://twitter.com/hambyhaxx)
 
-Donation box:
+### Updates
+
+- Added colorized output.
+- Added directory check. (*see line 53*)
+- Added ASCII banner.
+- Added `/etc/hosts` IP check.
+
+#### Donation box
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/hambyhaxx)
 
