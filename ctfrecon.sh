@@ -77,6 +77,9 @@ else
 			echo "$IP ${DIR_NAME}.${PLATFORM}" >> /etc/hosts 
 			echo -e "\033[1;32m[+] \033[0;37mSuccessfully added \033[1;34m${DIR_NAME}.${PLATFORM} \033[0;37mto \033[0;32m/etc/hosts"
 
+			# Move to newly created directory
+			cd $DIR_NAME
+
 			# Scanning using nmap
 			echo -e "\033[1;32m[+] \033[0;37mNow Scanning network using nmap.."
 			nmap -T4 -A -Pn -p- -oN scans/${DIR_NAME}_nmap_scan.txt $IP >/dev/null
@@ -93,8 +96,8 @@ else
 			echo -e "\033[1;32m[+] \033[0;37mGoBuster Directory Bruteforcing: \033[0;32mFinished"
 
 			# Cleaning permissions of directories
-			chmod 755 $(pwd)/$DIR_NAME/
-			chown -R 1000:1000 $(pwd)/$DIR_NAME/
+			chmod 755 $(pwd)
+			chown -R 1000:1000 $(pwd)/*
 		fi
 
 	else
