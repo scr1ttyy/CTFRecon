@@ -82,7 +82,7 @@ else
 
 			# Scanning using nmap
 			echo -e "\033[1;32m[+] \033[0;37mNow Scanning network using nmap.."
-			nmap -T4 -A -Pn -p- -oN scans/${DIR_NAME}_nmap_scan.txt $IP >/dev/null
+			nmap -T4 -A -Pn -p- -oN scans/${DIR_NAME}_nmap_scan.txt $IP &>/dev/null
 
 			echo -e "\033[1;32m[+] \033[0;37mNmap scan: \033[0;32mFinished"
 			echo -e "\033[1;32m[+] \033[0;37mLog files saved at \033[0;32mscans/ \033[0;37mdirectory!\n"
